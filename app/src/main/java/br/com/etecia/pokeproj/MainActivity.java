@@ -11,6 +11,9 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
     ListView list;
 
+    String titulo[] = {"Bubasaur", "Charmander", "Squirtel"};
+    String descricao[] = {"While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.", "From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out. It has a preference for hot things.", "When it feels threatened, it draws its limbs inside its shell and sprays water from its mouth. When it retracts its long neck into its shell, it squirts out"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
