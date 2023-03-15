@@ -8,20 +8,30 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
-    ListView list;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 
-    String titulo[] = {"Bubasaur", "Charmander", "Squirtel"};
-    String descricao[] = {"While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.", "From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out. It has a preference for hot things.", "When it feels threatened, it draws its limbs inside its shell and sprays water from its mouth. When it retracts its long neck into its shell, it squirts out"};
+public class MainActivity extends AppCompatActivity {
+    List<Pokemon> ListaPokemon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        list = findViewById(R.id.list);
-        MyAdapter adapter = new MyAdapter();
-        list.setAdapter(adapter);
+        //criando base de dados para carregamento da lista
+        ListaPokemon = new ArrayList<>();
+
+        ListaPokemon.add(
+                new Pokemon("Charmander",
+                        "Pokemon fofo que parece uma largatixa",
+                        "Fogo e Largatixa",
+                        R.drawable.largatixa));
+
+        //criando a classe adaptadora e passando os paramentros
+        MyAdapter adapter = new MyAdapter(getApplicationContext(),);
+
     }
     public class MyAdapter extends BaseAdapter{
 
