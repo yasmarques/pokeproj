@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.largatixa));
 
         //criando a classe adaptadora e passando os paramentros
-        MyAdapter adapter = new MyAdapter(getApplicationContext(),);
+        MyAdapter adapter = new MyAdapter(getApplicationContext(), ListaPokemon);
 
     }
     public class MyAdapter extends BaseAdapter{
