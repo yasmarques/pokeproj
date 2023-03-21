@@ -30,7 +30,7 @@
             android:layout_height="350dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="centerCrop"
-            android:src="@drawable/largatixa" />
+            android:src="@drawable/largatixa"/>
 
     </LinearLayout>
 </LinearLayout>
