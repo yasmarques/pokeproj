@@ -1,6 +1,7 @@
 package br.com.etecia.pokeproj;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.idTituloPk.setText(ListaPokemon.get(position).getTitulo());
         holder.idImgPokemon.setImageResource(ListaPokemon.get(position).getImagem());
 
+        holder.idCardPokemon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new(mContexto, ApresentaPokemonActivity.class);
+                Intent.putExtra("Titulo", ListaPokemon.get(position).getTitulo());
+                Intent.putExtra("Descricao", ListaPokemon.get(position).getDescricao());
+                Intent.putExtra("Categoria", ListaPokemon.get(position).getCategoria());
+                Intent.putExtra("ImagemPokemon", ListaPokemon.get(position).getImagem());
+
+                mContexto.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            }
+        });
     }
 
     @Override
